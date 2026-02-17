@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+
+# Environment
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Data
+*.db
+*.sqlite
+*.sqlite3
+data/
+
+# Subscribers
+subscribers.json
+
+# Generated output
+sample-output/
+
+# Excel/PDF generated files
+*.xlsx
+*.pdf

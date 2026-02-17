@@ -1,0 +1,62 @@
+============================================================
+HOT LEADS WEEKLY
+{{DATE_RANGE}}
+============================================================
+
+  {{TOTAL_LEADS}} Hot Leads  |  Avg Score: {{AVG_SCORE}}  |  Top Signal: {{TOP_SIGNAL}}
+
+SENIORITY BREAKDOWN:
+{{SENIORITY_BREAKDOWN}}
+
+------------------------------------------------------------
+TOP 5 LEADS THIS WEEK
+------------------------------------------------------------
+
+  #1 (Score: {{SCORE_1}})
+  {{TITLE_1}}
+  {{COMPANY_1}}
+  {{LOCATION_1}}  |  {{SALARY_1}}
+  Signals: {{SIGNALS_1}}
+  {{URL_1}}
+
+  #2 (Score: {{SCORE_2}})
+  {{TITLE_2}}
+  {{COMPANY_2}}
+  {{LOCATION_2}}  |  {{SALARY_2}}
+  Signals: {{SIGNALS_2}}
+  {{URL_2}}
+
+  #3 (Score: {{SCORE_3}})
+  {{TITLE_3}}
+  {{COMPANY_3}}
+  {{LOCATION_3}}  |  {{SALARY_3}}
+  Signals: {{SIGNALS_3}}
+  {{URL_3}}
+
+  #4 (Score: {{SCORE_4}})
+  {{TITLE_4}}
+  {{COMPANY_4}}
+  {{LOCATION_4}}  |  {{SALARY_4}}
+  Signals: {{SIGNALS_4}}
+  {{URL_4}}
+
+  #5 (Score: {{SCORE_5}})
+  {{TITLE_5}}
+  {{COMPANY_5}}
+  {{LOCATION_5}}  |  {{SALARY_5}}
+  Signals: {{SIGNALS_5}}
+  {{URL_5}}
+
+------------------------------------------------------------
+
+Full list of {{TOTAL_LEADS}} leads attached as CSV.
+Sortable by score, salary, seniority, and signals.
+
+How useful were this week's leads?
+Reply to this email with feedback.
+
+------------------------------------------------------------
+Hot Leads Weekly by Pariter Media Inc.
+Curated from {{TOTAL_LEADS}} qualifying VP+ executive postings.
+Reply with 'unsubscribe' to stop receiving these emails.
+------------------------------------------------------------

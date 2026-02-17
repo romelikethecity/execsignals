@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Leads Weekly — Executive Search Intelligence | AI Pulse</title>
+    <meta name="description" content="272 VP+ growth hires scored and ranked every Monday. Signal-rich executive leads with real salary budgets, delivered to your inbox before your competitors see them.">
+
+    <!-- OG / Twitter -->
+    <meta property="og:title" content="Hot Leads Weekly — Executive Search Intelligence">
+    <meta property="og:description" content="272 VP+ growth hires scored and ranked every Monday. Signal-rich executive leads with real salary budgets.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #0B1120;
+            --bg-card: #111827;
+            --bg-card-hover: #1E293B;
+            --accent: #06D6A0;
+            --accent-dim: #04A57D;
+            --accent-glow: rgba(6, 214, 160, 0.12);
+            --text-primary: #F8FAFC;
+            --text-secondary: #E2E8F0;
+            --text-muted: #94A3B8;
+            --warning: #F59E0B;
+            --error: #EF4444;
+            --border: rgba(255, 255, 255, 0.06);
+            --font-display: 'Source Serif 4', Georgia, serif;
+            --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --score-exceptional: #06D6A0;
+            --score-strong: #3B82F6;
+            --score-solid: #F59E0B;
+            --score-baseline: #94A3B8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+        /* Header */
+        .site-header {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .header-inner {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .site-logo {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .site-logo span { color: var(--accent); }
+        .nav { display: flex; gap: 24px; align-items: center; }
+        .nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav a:hover { color: var(--text-primary); }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 48px;
+            text-align: center;
+        }
+        .hero-label {
+            display: inline-block;
+            background: var(--accent-glow);
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(6, 214, 160, 0.15);
+            margin-bottom: 24px;
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+        .hero .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            max-width: 640px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        /* Hero stats row */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat .num {
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+        }
+        .hero-stat .lbl {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Sample leads card */
+        .sample-leads {
+            margin: 0 0 80px;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        /* Lead cards */
+        .lead-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 12px;
+            transition: border-color 0.2s, transform 0.15s;
+            position: relative;
+        }
+        .lead-card:hover {
+            border-color: rgba(255,255,255,0.12);
+            transform: translateY(-1px);
+        }
+        .lead-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .lead-card-info { flex: 1; }
+        .lead-rank {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+        .lead-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .lead-company {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        .lead-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .lead-signals {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 12px;
+        }
+        .signal-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .signal-badge.growth {
+            background: rgba(6, 214, 160, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(6, 214, 160, 0.2);
+        }
+        .signal-badge.team {
+            background: rgba(59, 130, 246, 0.1);
+            color: #60A5FA;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        .signal-badge.urgency {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--warning);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        /* Score badge */
+        .score-badge {
+            min-width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .score-badge .score-num {
+            font-family: var(--font-mono);
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .score-badge .score-lbl {
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+        .score-exceptional {
+            background: rgba(6, 214, 160, 0.12);
+            border: 1px solid rgba(6, 214, 160, 0.25);
+        }
+        .score-exceptional .score-num { color: var(--score-exceptional); }
+        .score-exceptional .score-lbl { color: rgba(6, 214, 160, 0.7); }
+        .score-strong {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        .score-strong .score-num { color: var(--score-strong); }
+        .score-strong .score-lbl { color: rgba(59, 130, 246, 0.6); }
+
+        /* Blurred leads */
+        .lead-card.blurred {
+            filter: blur(4px);
+            pointer-events: none;
+            user-select: none;
+        }
+        .blur-overlay {
+            text-align: center;
+            padding: 32px 0;
+            position: relative;
+        }
+        .blur-overlay-cta {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg-dark);
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            font-family: var(--font-body);
+            transition: background 0.2s, transform 0.15s;
+        }
+        .blur-overlay-cta:hover {
+            background: var(--accent-dim);
+            transform: translateY(-1px);
+        }
+        .blur-overlay p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+
+        /* How scoring works */
+        .scoring-section {
+            margin: 80px 0;
+        }
+        .scoring-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .scoring-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+        }
+        .scoring-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .scoring-card .icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .scoring-card .icon.green {
+            background: rgba(6, 214, 160, 0.12);
+            color: var(--accent);
+        }
+        .scoring-card .icon.blue {
+            background: rgba(59, 130, 246, 0.1);
+            color: #60A5FA;
+        }
+        .scoring-card .icon.gold {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--warning);
+        }
+        .scoring-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+        .scoring-item:last-child { border-bottom: none; }
+        .scoring-item .pts {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .scoring-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Signal distribution bars */
+        .signal-dist {
+            margin: 80px 0;
+        }
+        .signal-bar-group {
+            display: grid;
+            grid-template-columns: 140px 1fr 50px;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .signal-bar-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-align: right;
+        }
+        .signal-bar-track {
+            height: 32px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+        }
+        .signal-bar-fill {
+            height: 100%;
+            border-radius: 6px;
+            transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+            width: 0;
+        }
+        .signal-bar-fill.green { background: linear-gradient(90deg, var(--accent), var(--accent-dim)); }
+        .signal-bar-fill.blue { background: linear-gradient(90deg, #3B82F6, #2563EB); }
+        .signal-bar-fill.gold { background: linear-gradient(90deg, #F59E0B, #D97706); }
+        .signal-bar-count {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-align: right;
+        }
+
+        /* Value props */
+        .value-section {
+            margin: 80px 0;
+        }
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .value-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+        }
+        .value-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .value-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .value-grid { grid-template-columns: 1fr; }
+        }
+
+        /* CTA section */
+        .cta-section {
+            margin: 80px 0;
+            text-align: center;
+        }
+        .cta-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 48px 32px;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .cta-box h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .cta-box p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 28px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-form {
+            display: flex;
+            gap: 10px;
+            max-width: 460px;
+            margin: 0 auto 12px;
+        }
+        .cta-input {
+            flex: 1;
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+        }
+        .cta-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        .cta-input::placeholder { color: var(--text-muted); }
+        .cta-btn {
+            background: var(--accent);
+            color: var(--bg-dark);
+            border: none;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            white-space: nowrap;
+        }
+        .cta-btn:hover {
+            background: var(--accent-dim);
+            transform: translateY(-1px);
+        }
+        .cta-fine-print {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .cta-success {
+            display: none;
+            padding: 20px;
+            background: rgba(6, 214, 160, 0.08);
+            border: 1px solid rgba(6, 214, 160, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .cta-success h3 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+        .cta-success p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .cta-form { flex-direction: column; }
+        }
+
+        /* Score legend */
+        .score-legend {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 24px 0;
+        }
+        .score-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .score-legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 3px;
+        }
+        .score-legend-dot.exceptional { background: var(--score-exceptional); }
+        .score-legend-dot.strong { background: var(--score-strong); }
+        .score-legend-dot.solid { background: var(--score-solid); }
+        .score-legend-dot.baseline { background: var(--score-baseline); }
+
+        /* Footer */
+        .site-footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 0;
+            text-align: center;
+        }
+        .footer-content {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 24px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero-stats { flex-direction: column; gap: 20px; }
+            .lead-card-top { flex-direction: column; }
+            .signal-bar-group { grid-template-columns: 100px 1fr 40px; }
+            .footer-content { flex-direction: column; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+    <div class="header-inner">
+        <a href="/" class="site-logo">AI <span>Pulse</span></a>
+        <nav class="nav">
+            <a href="/tools/">Tools</a>
+            <a href="/insights/">Market Intel</a>
+            <a href="/tools/ai-penetration-index/">AI Index</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-label">Hot Leads Weekly</div>
+        <h1>Every VP+ Growth Hire.<br>Scored. Ranked. Monday Morning.</h1>
+        <p class="subtitle">We scan 27,000+ job postings and surface the ones that actually need retained search: growth hires, CEO direct reports, first-hire roles with real salary budgets. You get a ranked list before your competitors see the posting.</p>
+
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="num" id="stat-leads">272</div>
+                <div class="lbl">VP+ leads this week</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num">$234K</div>
+                <div class="lbl">Avg max salary</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num">33</div>
+                <div class="lbl">Avg signal score</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num">14</div>
+                <div class="lbl">Days of data</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main class="container">
+
+    <!-- Sample Leads -->
+    <section class="sample-leads">
+        <div class="section-header">
+            <h2>This Week's Top Leads</h2>
+            <p>Real leads from this week's scan. Scored by seniority, signals, and salary budget.</p>
+        </div>
+
+        <div class="score-legend">
+            <div class="score-legend-item"><span class="score-legend-dot exceptional"></span> 40+ Exceptional</div>
+            <div class="score-legend-item"><span class="score-legend-dot strong"></span> 30-39 Strong</div>
+            <div class="score-legend-item"><span class="score-legend-dot solid"></span> 20-29 Solid</div>
+            <div class="score-legend-item"><span class="score-legend-dot baseline"></span> 10-19 Baseline</div>
+        </div>
+
+        <!-- Lead 1 -->
+        <div class="lead-card">
+            <div class="lead-card-top">
+                <div class="lead-card-info">
+                    <div class="lead-rank">#1 this week</div>
+                    <div class="lead-title">Chief Financial Officer</div>
+                    <div class="lead-company">SWCA Environmental Consultants</div>
+                    <div class="lead-meta">Remote, US &middot; $330K - $420K &middot; C-Level</div>
+                </div>
+                <div class="score-badge score-exceptional">
+                    <div class="score-num">57</div>
+                    <div class="score-lbl">Score</div>
+                </div>
+            </div>
+            <div class="lead-signals">
+                <span class="signal-badge urgency">Immediate</span>
+                <span class="signal-badge team">Build Team</span>
+                <span class="signal-badge team">Reports to CRO</span>
+            </div>
+        </div>
+
+        <!-- Lead 2 -->
+        <div class="lead-card">
+            <div class="lead-card-top">
+                <div class="lead-card-info">
+                    <div class="lead-rank">#2 this week</div>
+                    <div class="lead-title">Chief Financial Officer</div>
+                    <div class="lead-company">Goodwill of the Finger Lakes</div>
+                    <div class="lead-meta">Rochester, NY &middot; $195K - $210K &middot; C-Level</div>
+                </div>
+                <div class="score-badge score-exceptional">
+                    <div class="score-num">57</div>
+                    <div class="score-lbl">Score</div>
+                </div>
+            </div>
+            <div class="lead-signals">
+                <span class="signal-badge growth">Growth Hire</span>
+                <span class="signal-badge team">Build Team</span>
+                <span class="signal-badge team">Reports to CEO</span>
+            </div>
+        </div>
+
+        <!-- Lead 3 -->
+        <div class="lead-card">
+            <div class="lead-card-top">
+                <div class="lead-card-info">
+                    <div class="lead-rank">#3 this week</div>
+                    <div class="lead-title">VP, Chief Privacy Officer</div>
+                    <div class="lead-company">Adobe</div>
+                    <div class="lead-meta">San Francisco &middot; $222K - $507K &middot; C-Level</div>
+                </div>
+                <div class="score-badge score-exceptional">
+                    <div class="score-num">56</div>
+                    <div class="score-lbl">Score</div>
+                </div>
+            </div>
+            <div class="lead-signals">
+                <span class="signal-badge growth">Growth Hire</span>
+                <span class="signal-badge team">Build Team</span>
+                <span class="signal-badge team">Reports to CRO</span>
+            </div>
+        </div>
+
+        <!-- Lead 4 -->
+        <div class="lead-card">
+            <div class="lead-card-top">
+                <div class="lead-card-info">
+                    <div class="lead-rank">#4 this week</div>
+                    <div class="lead-title">SVP, Physicians' Organization Operations</div>
+                    <div class="lead-company">Boston Children's Hospital</div>
+                    <div class="lead-meta">Boston (Remote) &middot; $325K - $400K &middot; SVP</div>
+                </div>
+                <div class="score-badge score-exceptional">
+                    <div class="score-num">55</div>
+                    <div class="score-lbl">Score</div>
+                </div>
+            </div>
+            <div class="lead-signals">
+                <span class="signal-badge growth">Growth Hire</span>
+                <span class="signal-badge team">Reports to CRO</span>
+                <span class="signal-badge team">Reports to CEO</span>
+            </div>
+        </div>
+
+        <!-- Lead 5 (blurred) -->
+        <div class="lead-card blurred">
+            <div class="lead-card-top">
+                <div class="lead-card-info">
+                    <div class="lead-rank">#5 this week</div>
+                    <div class="lead-title">Chief Financial Officer</div>
+                    <div class="lead-company">Association for Individual Development</div>
+                    <div class="lead-meta">Elgin, IL (Remote) &middot; $150K - $175K &middot; C-Level</div>
+                </div>
+                <div class="score-badge score-exceptional">
+                    <div class="score-num">54</div>
+                    <div class="score-lbl">Score</div>
+                </div>
+            </div>
+            <div class="lead-signals">
+                <span class="signal-badge growth">Growth Hire</span>
+                <span class="signal-badge team">Build Team</span>
+                <span class="signal-badge team">Reports to CEO</span>
+            </div>
+        </div>
+
+        <!-- Blurred leads 6-7 -->
+        <div class="lead-card blurred">
+            <div class="lead-card-top">
+                <div class="lead-card-info">
+                    <div class="lead-rank">#6 this week</div>
+                    <div class="lead-title">VP, Global Sales Operations</div>
+                    <div class="lead-company">Enterprise SaaS Company</div>
+                    <div class="lead-meta">New York &middot; $280K - $360K &middot; VP</div>
+                </div>
+                <div class="score-badge score-exceptional">
+                    <div class="score-num">52</div>
+                    <div class="score-lbl">Score</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lead-card blurred">
+            <div class="lead-card-top">
+                <div class="lead-card-info">
+                    <div class="lead-rank">#7 this week</div>
+                    <div class="lead-title">Chief Revenue Officer</div>
+                    <div class="lead-company">Growth-Stage Fintech</div>
+                    <div class="lead-meta">Remote &middot; $350K - $450K &middot; C-Level</div>
+                </div>
+                <div class="score-badge score-exceptional">
+                    <div class="score-num">51</div>
+                    <div class="score-lbl">Score</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="blur-overlay">
+            <button class="blur-overlay-cta" onclick="document.getElementById('cta-section').scrollIntoView({behavior:'smooth'})">Get the full list of 272 leads</button>
+            <p>Free sample week. No call required.</p>
+        </div>
+    </section>
+
+    <!-- Signal Distribution -->
+    <section class="signal-dist">
+        <div class="section-header">
+            <h2>What We're Finding This Week</h2>
+            <p>Signal distribution across 272 qualifying VP+ leads.</p>
+        </div>
+
+        <div class="signal-bars" id="signal-bars">
+            <div class="signal-bar-group">
+                <div class="signal-bar-label">Growth Hire</div>
+                <div class="signal-bar-track"><div class="signal-bar-fill green" data-width="86"></div></div>
+                <div class="signal-bar-count">234</div>
+            </div>
+            <div class="signal-bar-group">
+                <div class="signal-bar-label">Build Team</div>
+                <div class="signal-bar-track"><div class="signal-bar-fill blue" data-width="51"></div></div>
+                <div class="signal-bar-count">138</div>
+            </div>
+            <div class="signal-bar-group">
+                <div class="signal-bar-label">Reports to CRO</div>
+                <div class="signal-bar-track"><div class="signal-bar-fill blue" data-width="14"></div></div>
+                <div class="signal-bar-count">37</div>
+            </div>
+            <div class="signal-bar-group">
+                <div class="signal-bar-label">Reports to CEO</div>
+                <div class="signal-bar-track"><div class="signal-bar-fill gold" data-width="11"></div></div>
+                <div class="signal-bar-count">29</div>
+            </div>
+            <div class="signal-bar-group">
+                <div class="signal-bar-label">First Hire</div>
+                <div class="signal-bar-track"><div class="signal-bar-fill gold" data-width="4"></div></div>
+                <div class="signal-bar-count">12</div>
+            </div>
+        </div>
+
+        <!-- Seniority + Function mini-grids -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px;">
+            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px;">
+                <h3 style="font-family: var(--font-display); font-size: 1rem; font-weight: 600; margin-bottom: 16px;">By Seniority</h3>
+                <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem;">
+                    <span style="color: var(--text-secondary);">VP</span>
+                    <span style="font-family: var(--font-mono); color: var(--accent);">179</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem;">
+                    <span style="color: var(--text-secondary);">C-Level</span>
+                    <span style="font-family: var(--font-mono); color: var(--accent);">75</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem;">
+                    <span style="color: var(--text-secondary);">SVP</span>
+                    <span style="font-family: var(--font-mono); color: var(--accent);">16</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 8px 0; font-size: 0.9rem;">
+                    <span style="color: var(--text-secondary);">EVP</span>
+                    <span style="font-family: var(--font-mono); color: var(--accent);">2</span>
+                </div>
+            </div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px;">
+                <h3 style="font-family: var(--font-display); font-size: 1rem; font-weight: 600; margin-bottom: 16px;">By Function</h3>
+                <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem;">
+                    <span style="color: var(--text-secondary);">Finance</span>
+                    <span style="font-family: var(--font-mono); color: var(--accent);">43</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem;">
+                    <span style="color: var(--text-secondary);">Operations</span>
+                    <span style="font-family: var(--font-mono); color: var(--accent);">28</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem;">
+                    <span style="color: var(--text-secondary);">Sales</span>
+                    <span style="font-family: var(--font-mono); color: var(--accent);">26</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem;">
+                    <span style="color: var(--text-secondary);">Marketing</span>
+                    <span style="font-family: var(--font-mono); color: var(--accent);">23</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 8px 0; font-size: 0.9rem;">
+                    <span style="color: var(--text-secondary);">Product + Eng</span>
+                    <span style="font-family: var(--font-mono); color: var(--accent);">25</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How Scoring Works -->
+    <section class="scoring-section">
+        <div class="section-header">
+            <h2>How We Score Every Lead</h2>
+            <p>Each qualifying lead starts at 10 points and accumulates bonuses based on three dimensions.</p>
+        </div>
+
+        <div class="scoring-grid">
+            <div class="scoring-card">
+                <h3><span class="icon green">&#9650;</span> Seniority</h3>
+                <div class="scoring-item"><span>C-Level</span><span class="pts">+15</span></div>
+                <div class="scoring-item"><span>EVP</span><span class="pts">+12</span></div>
+                <div class="scoring-item"><span>SVP</span><span class="pts">+10</span></div>
+                <div class="scoring-item"><span>VP</span><span class="pts">+5</span></div>
+            </div>
+            <div class="scoring-card">
+                <h3><span class="icon blue">&#9673;</span> Signals</h3>
+                <div class="scoring-item"><span>Reports to CEO</span><span class="pts">+10</span></div>
+                <div class="scoring-item"><span>First Hire</span><span class="pts">+8</span></div>
+                <div class="scoring-item"><span>Reports to CRO</span><span class="pts">+6</span></div>
+                <div class="scoring-item"><span>Build Team</span><span class="pts">+5</span></div>
+                <div class="scoring-item"><span>Growth Hire</span><span class="pts">+4</span></div>
+            </div>
+            <div class="scoring-card">
+                <h3><span class="icon gold">$</span> Salary Budget</h3>
+                <div class="scoring-item"><span>$300K+</span><span class="pts">+10</span></div>
+                <div class="scoring-item"><span>$200K+</span><span class="pts">+7</span></div>
+                <div class="scoring-item"><span>$150K+</span><span class="pts">+4</span></div>
+                <div class="scoring-item"><span>$100K+</span><span class="pts">+2</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Props -->
+    <section class="value-section">
+        <div class="section-header">
+            <h2>What LinkedIn Recruiter Can't Tell You</h2>
+            <p>LinkedIn shows you a job was posted. We tell you why it was posted.</p>
+        </div>
+
+        <div class="value-grid">
+            <div class="value-card">
+                <h3>Signal extraction</h3>
+                <p>A VP of Sales reporting to the CEO, building a team from scratch, is a fundamentally different search than a VP of Sales backfilling under a CRO. We make that distinction. LinkedIn does not.</p>
+            </div>
+            <div class="value-card">
+                <h3>Scored and ranked</h3>
+                <p>Open the email, best opportunities at the top. No boolean searches, no saved alerts returning 300 results with 280 irrelevant ones.</p>
+            </div>
+            <div class="value-card">
+                <h3>Budget confirmed</h3>
+                <p>We only include roles with posted compensation. No salary = no real budget authority = no retained search opportunity. This eliminates tire-kicker postings and evergreen listings.</p>
+            </div>
+            <div class="value-card">
+                <h3>Monday morning advantage</h3>
+                <p>Leads arrive before your competitors start their weekly monitoring. A senior recruiter spending 2-3 hours per week on job boards can redirect that time to client conversations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="cta-section">
+        <div class="cta-box">
+            <h2>Get This Week's Leads Free</h2>
+            <p>Reply "send it" energy. No demo, no call, no strings. Just the full scored list in your inbox Monday morning.</p>
+
+            <div class="cta-form" id="cta-form">
+                <input type="email" class="cta-input" id="cta-email" placeholder="you@recruitingfirm.com">
+                <button class="cta-btn" id="cta-btn">Send Me the List</button>
+            </div>
+            <div class="cta-fine-print">Free sample week. Cancel anytime. After that, $297/month.</div>
+
+            <div class="cta-success" id="cta-success">
+                <h3>Check your inbox Monday.</h3>
+                <p>272 scored VP+ leads with salary budgets, ranked by signal strength. Full CSV attached.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <span>&copy; 2026 AI Pulse &middot; Pariter Media Inc.</span>
+        <div class="footer-links">
+            <a href="/tools/ai-penetration-index/">AI Penetration Index</a>
+            <a href="/about/">About</a>
+            <a href="mailto:rome@paritermedia.com">Contact</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Animate signal bars on scroll
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.signal-bar-fill').forEach(bar => {
+                bar.style.width = bar.dataset.width + '%';
+            });
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.3 });
+
+const signalBars = document.getElementById('signal-bars');
+if (signalBars) observer.observe(signalBars);
+
+// Animate hero stat counter
+function animateCounter(el, target, duration) {
+    const start = performance.now();
+    function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target);
+        if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+}
+animateCounter(document.getElementById('stat-leads'), 272, 1500);
+
+// CTA form
+document.getElementById('cta-btn').addEventListener('click', function() {
+    const email = document.getElementById('cta-email').value.trim();
+    if (!email || !email.includes('@')) {
+        document.getElementById('cta-email').style.borderColor = 'var(--error)';
+        return;
+    }
+
+    const sub = { email, product: 'hot-leads', timestamp: new Date().toISOString() };
+    console.log('New hot-leads subscriber:', sub);
+
+    const subs = JSON.parse(localStorage.getItem('hot_leads_subscribers') || '[]');
+    subs.push(sub);
+    localStorage.setItem('hot_leads_subscribers', JSON.stringify(subs));
+
+    document.getElementById('cta-form').style.display = 'none';
+    document.getElementById('cta-success').style.display = 'block';
+});
+
+document.getElementById('cta-email').addEventListener('focus', function() {
+    this.style.borderColor = 'var(--accent)';
+});
+</script>
+
+</body>
+</html>
