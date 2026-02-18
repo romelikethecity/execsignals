@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="80" viewBox="0 0 400 80">
+  <!-- Icon -->
+  <rect x="0" y="0" width="80" height="80" rx="18" fill="#D4A054"/>
+  <polyline points="11.25,41.25 27.5,41.25 35,18.75 42.5,60 50,41.25 68.75,41.25" fill="none" stroke="#0C0F1A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Wordmark -->
+  <text x="100" y="52" font-family="'Plus Jakarta Sans', 'Helvetica Neue', sans-serif" font-weight="700" font-size="36" fill="#0C0F1A">Exec</text>
+  <text x="192" y="52" font-family="'Plus Jakarta Sans', 'Helvetica Neue', sans-serif" font-weight="700" font-size="36" fill="#B8863E">Signals</text>
+</svg>

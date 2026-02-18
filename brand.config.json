@@ -1,0 +1,103 @@
+{
+  "brand": "ExecSignals",
+  "domain": "execsignals.com",
+  "tagline": "VP+ hiring intelligence for executive search.",
+  "description": "Scored VP+ growth hires delivered every Monday. Signal-rich executive leads with real salary budgets, market intelligence, and hiring velocity data.",
+  "product": "The Monday Brief",
+  "price": "$297/mo",
+
+  "colors": {
+    "dark_mode": {
+      "background": "#0C0F1A",
+      "surface": "#111827",
+      "surface_hover": "#1A2235",
+      "primary": "#D4A054",
+      "primary_hover": "#B8863E",
+      "primary_glow": "rgba(212, 160, 84, 0.12)",
+      "text": "#F8FAFC",
+      "text_secondary": "#E2E8F0",
+      "text_muted": "#94A3B8",
+      "border": "rgba(255, 255, 255, 0.06)",
+      "border_accent": "rgba(212, 160, 84, 0.15)"
+    },
+    "light_mode": {
+      "background": "#F8FAFC",
+      "text": "#0C0F1A"
+    },
+    "semantic": {
+      "growth": "#06D6A0",
+      "team": "#60A5FA",
+      "urgency": "#D4A054",
+      "error": "#EF4444"
+    },
+    "scores": {
+      "exceptional": "#D4A054",
+      "strong": "#5B8DEF",
+      "solid": "#E2A84B",
+      "baseline": "#94A3B8"
+    }
+  },
+
+  "typography": {
+    "fonts": {
+      "display": {
+        "family": "DM Serif Display",
+        "weights": [400],
+        "usage": "Headings, section titles"
+      },
+      "body": {
+        "family": "Plus Jakarta Sans",
+        "weights": [400, 500, 600, 700],
+        "usage": "Body text, nav, UI, wordmark"
+      },
+      "mono": {
+        "family": "IBM Plex Mono",
+        "weights": [400, 500, 600],
+        "usage": "Data values, scores, stats, pricing"
+      }
+    },
+    "wordmark": {
+      "font": "Plus Jakarta Sans",
+      "weight": 700,
+      "style": "'Exec' in white/dark, 'Signals' in amber"
+    }
+  },
+
+  "assets": {
+    "logos": {
+      "horizontal_dark_bg_svg": "assets/logos/logo-horizontal-dark-bg.svg",
+      "horizontal_dark_bg_png": "assets/logos/logo-horizontal-dark-bg.png",
+      "horizontal_dark_bg_2x": "assets/logos/logo-horizontal-dark-bg@2x.png",
+      "horizontal_light_bg_png": "assets/logos/logo-horizontal-light-bg.png",
+      "horizontal_light_bg_2x": "assets/logos/logo-horizontal-light-bg@2x.png",
+      "stacked_dark_bg_png": "assets/logos/logo-stacked-dark-bg.png",
+      "stacked_light_bg_png": "assets/logos/logo-stacked-light-bg.png",
+      "og_image": "assets/social-preview.png"
+    },
+    "favicons": {
+      "svg": "assets/svg/icon-inverted.svg",
+      "ico": "favicon.ico",
+      "png_16": "assets/favicon-16x16.png",
+      "png_32": "assets/favicon-32x32.png",
+      "apple_touch": "assets/apple-touch-icon.png",
+      "icon_192": "assets/android-chrome-192x192.png",
+      "icon_512": "assets/android-chrome-512x512.png"
+    },
+    "icons": {
+      "inverted_svg": "assets/svg/icon-inverted.svg",
+      "standard_svg": "assets/svg/icon-standard.svg",
+      "mono_white_svg": "assets/svg/icon-mono-white.svg",
+      "mono_dark_svg": "assets/svg/icon-mono-dark.svg"
+    },
+    "css": {
+      "main": "css/styles.css"
+    }
+  },
+
+  "entity": {
+    "legal_name": "Pariter Media Inc.",
+    "parent": "Pariter Media Inc.",
+    "founded": "2026",
+    "contact": "hello@execsignals.com"
+  }
+}

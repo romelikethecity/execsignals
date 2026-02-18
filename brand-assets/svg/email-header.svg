@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="160" viewBox="0 0 600 160">
+  <rect width="600" height="160" fill="#0C0F1A"/>
+
+  <!-- Subtle pulse in background -->
+  <polyline points="0,100 100,100 200,100 260,40 320,140 380,100 480,100 600,100" fill="none" stroke="#D4A054" stroke-width="1.5" opacity="0.06" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Icon -->
+  <rect x="40" y="40" width="80" height="80" rx="18" fill="#D4A054"/>
+  <polyline points="51.25,81.25 67.5,81.25 75,58.75 82.5,100 90,81.25 108.75,81.25" fill="none" stroke="#0C0F1A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Brand -->
+  <text x="144" y="78" font-family="'Plus Jakarta Sans', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="32" fill="#F8FAFC">Exec</text>
+  <text x="234" y="78" font-family="'Plus Jakarta Sans', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="32" fill="#D4A054">Signals</text>
+
+  <!-- Tagline -->
+  <text x="144" y="102" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#94A3B8" letter-spacing="1.5">THE MONDAY BRIEF</text>
+
+  <!-- Divider -->
+  <line x1="0" y1="158" x2="600" y2="158" stroke="#D4A054" stroke-width="2" opacity="0.4"/>
+</svg>

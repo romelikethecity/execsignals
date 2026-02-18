@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Allow AI search crawlers
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
+# Block bulk scrapers
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://execsignals.com/sitemap.xml

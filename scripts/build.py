@@ -1,180 +1,155 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ExecSignals — VP+ Hiring Intelligence for Executive Search</title>
-    <meta name="description" content="Scored VP+ growth hires delivered every Monday. Signal-rich executive leads with real salary budgets, market intelligence, and hiring velocity data for recruiting firms.">
-    <link rel="canonical" href="https://execsignals.com/">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+#!/usr/bin/env python3
+"""ExecSignals — Master build script.
 
-    <!-- Favicon -->
-    <link rel="icon" href="/assets/svg/icon-inverted.svg" type="image/svg+xml">
-    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
-    <link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/assets/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#0C0F1A" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#F8FAFC" media="(prefers-color-scheme: light)">
-    <meta name="msapplication-TileColor" content="#0C0F1A">
+Generates all HTML pages + sitemap from templates and data.
+Usage: python scripts/build.py [--data path/to/latest_stats.json]
+"""
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://execsignals.com/">
-    <meta property="og:title" content="ExecSignals — VP+ Hiring Intelligence for Executive Search">
-    <meta property="og:description" content="Scored VP+ growth hires delivered every Monday. Signal-rich executive leads with real salary budgets, market intelligence, and hiring velocity data for recruiting firms.">
-    <meta property="og:site_name" content="ExecSignals">
-    <meta property="og:image" content="https://execsignals.com/assets/social-preview.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="en_US">
+import argparse
+import json
+import os
+import sys
+from datetime import datetime
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ExecSignals — VP+ Hiring Intelligence for Executive Search">
-    <meta name="twitter:description" content="Scored VP+ growth hires delivered every Monday. Signal-rich executive leads with real salary budgets, market intelligence, and hiring velocity data for recruiting firms.">
-    <meta name="twitter:image" content="https://execsignals.com/assets/social-preview.png">
+# Add scripts dir to path so we can import siblings
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "WebSite",
-            "@id": "https://execsignals.com/#website",
-            "name": "ExecSignals",
-            "url": "https://execsignals.com",
-            "description": "VP+ hiring intelligence for executive search.",
-            "publisher": {
-                "@id": "https://execsignals.com/#organization"
-            }
-        },
-        {
-            "@type": "Organization",
-            "@id": "https://execsignals.com/#organization",
-            "name": "ExecSignals",
-            "url": "https://execsignals.com",
-            "parentOrganization": {
-                "@type": "Organization",
-                "name": "Pariter Media Inc."
-            },
-            "foundingDate": "2026",
-            "areaServed": "United States",
-            "knowsAbout": [
-                "Executive Search Intelligence",
-                "VP+ Hiring Data",
-                "Compensation Benchmarking",
-                "Hiring Signal Analysis",
-                "Recruiting Market Intelligence"
-            ]
-        },
-        {
-            "@type": "Product",
-            "name": "The Monday Brief",
-            "description": "Weekly scored VP+ growth hires with salary data, hiring signals, and market intelligence for executive recruiters.",
-            "brand": {
-                "@type": "Brand",
-                "name": "ExecSignals"
-            },
-            "offers": {
-                "@type": "Offer",
-                "price": "297",
-                "priceCurrency": "USD",
-                "priceValidUntil": "2027-12-31",
-                "availability": "https://schema.org/InStock",
-                "url": "https://execsignals.com/#pricing"
-            }
-        },
-        {
-            "@type": "FAQPage",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "How fresh is the data?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Most leads are 1-3 days old. We scan every week and only include roles posted in the last 7 days."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "What does 'scored' mean?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Every lead gets a score based on seniority, hiring signals, and salary budget. Higher scores mean higher-value retained search opportunities."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Where does the data come from?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "We scan major job boards for VP+ executive roles with posted compensation and extract signals from the full job description."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "What's in the Excel workbook?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Every lead from the week with 15 columns: title, company, location, salary range, score, signals, source URL, and more. Color-coded by score tier."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Is this just scraped job boards?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "The raw postings come from job boards, but we extract signals, confirm salary budgets, score by retained-search relevance, and add market context."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Can I cancel anytime?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes. No contract, no setup fee, no cancellation fee."
-                    }
-                }
-            ]
-        }
-    ]
+from nav_config import DOMAIN, SITE_NAME, FOOTER_ENTITY
+from templates import get_page_wrapper
+
+
+# ─── Default stats (used if no --data provided) ───
+DEFAULT_STATS = {
+    "lead_count": 272,
+    "avg_salary": "$234K",
+    "growth_hire_pct": "86%",
+    "freshness": "1-3",
+    "week_label": "Feb 10-17, 2026",
+    "generated_at": "2026-02-17T06:00:00Z",
 }
-    </script>
 
-    <!-- Fonts (non-blocking: preload + media=print swap + noscript fallback) -->
-    <link rel="preload" href="/assets/fonts/plus-jakarta-sans-latin-400.woff2"
-          as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="/assets/fonts/fonts.css"
-          media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/fonts/fonts.css"></noscript>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/styles.css?v=1">
+def load_stats(data_path):
+    """Load stats from JSON file, falling back to defaults."""
+    if data_path and os.path.exists(data_path):
+        with open(data_path) as f:
+            return json.load(f)
+    return DEFAULT_STATS
 
-</head>
-<body>
 
-<header class="site-header">
-    <div class="header-inner">
-        <a href="/" class="site-logo">Exec<span>Signals</span></a>
-        <nav class="nav">
-            <a href="#market-intel">Market Intel</a>
-            <a href="#how-it-works">How It Works</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#sample-brief">Sample Brief</a>
-            <a href="#cta-section" class="nav-cta">Send Me the Brief</a>
-        </nav>
-        <button class="menu-toggle" aria-label="Toggle menu">
-            <span class="menu-toggle-bar"></span>
-            <span class="menu-toggle-bar"></span>
-            <span class="menu-toggle-bar"></span>
-        </button>
-    </div>
-</header>
+def get_homepage_schemas(stats):
+    """Generate JSON-LD schemas for the homepage (Fieldwork @id anchor pattern)."""
+    return {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": f"https://{DOMAIN}/#website",
+                "name": SITE_NAME,
+                "url": f"https://{DOMAIN}",
+                "description": "VP+ hiring intelligence for executive search.",
+                "publisher": {"@id": f"https://{DOMAIN}/#organization"},
+            },
+            {
+                "@type": "Organization",
+                "@id": f"https://{DOMAIN}/#organization",
+                "name": SITE_NAME,
+                "url": f"https://{DOMAIN}",
+                "parentOrganization": {
+                    "@type": "Organization",
+                    "name": FOOTER_ENTITY,
+                },
+                "foundingDate": "2026",
+                "areaServed": "United States",
+                "knowsAbout": [
+                    "Executive Search Intelligence",
+                    "VP+ Hiring Data",
+                    "Compensation Benchmarking",
+                    "Hiring Signal Analysis",
+                    "Recruiting Market Intelligence",
+                ],
+            },
+            {
+                "@type": "Product",
+                "name": "The Monday Brief",
+                "description": "Weekly scored VP+ growth hires with salary data, hiring signals, and market intelligence for executive recruiters.",
+                "brand": {"@type": "Brand", "name": SITE_NAME},
+                "offers": {
+                    "@type": "Offer",
+                    "price": "297",
+                    "priceCurrency": "USD",
+                    "priceValidUntil": "2027-12-31",
+                    "availability": "https://schema.org/InStock",
+                    "url": f"https://{DOMAIN}/#pricing",
+                },
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How fresh is the data?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Most leads are 1-3 days old. We scan every week and only include roles posted in the last 7 days.",
+                        },
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What does 'scored' mean?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Every lead gets a score based on seniority, hiring signals, and salary budget. Higher scores mean higher-value retained search opportunities.",
+                        },
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Where does the data come from?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We scan major job boards for VP+ executive roles with posted compensation and extract signals from the full job description.",
+                        },
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What's in the Excel workbook?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Every lead from the week with 15 columns: title, company, location, salary range, score, signals, source URL, and more. Color-coded by score tier.",
+                        },
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is this just scraped job boards?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The raw postings come from job boards, but we extract signals, confirm salary budgets, score by retained-search relevance, and add market context.",
+                        },
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I cancel anytime?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. No contract, no setup fee, no cancellation fee.",
+                        },
+                    },
+                ],
+            },
+        ],
+    }
 
+
+def build_homepage(stats):
+    """Generate the homepage HTML."""
+    s = stats
+    lc = s["lead_count"]
+    avg = s["avg_salary"]
+    growth = s["growth_hire_pct"]
+    fresh = s["freshness"]
+    week = s["week_label"]
+
+    body = f"""
 <section class="hero">
     <div class="container">
         <div class="hero-label">The Monday Brief</div>
@@ -183,19 +158,19 @@
 
         <div class="hero-stats">
             <div class="hero-stat">
-                <div class="num" id="stat-leads">272</div>
+                <div class="num" id="stat-leads">{lc}</div>
                 <div class="lbl">VP+ leads scored</div>
             </div>
             <div class="hero-stat">
-                <div class="num">$234K</div>
+                <div class="num">{avg}</div>
                 <div class="lbl">Avg salary</div>
             </div>
             <div class="hero-stat">
-                <div class="num">86%</div>
+                <div class="num">{growth}</div>
                 <div class="lbl">Growth hires</div>
             </div>
             <div class="hero-stat">
-                <div class="num">1-3</div>
+                <div class="num">{fresh}</div>
                 <div class="lbl">Days fresh</div>
             </div>
         </div>
@@ -218,7 +193,7 @@
         <div class="section-header">
             <div class="section-divider"></div>
             <h2>This Week's Top Leads</h2>
-            <p>Four real leads from this week. Subscribers see all 272.</p>
+            <p>Four real leads from this week. Subscribers see all {lc}.</p>
         </div>
 
         <div class="score-legend">
@@ -369,7 +344,7 @@
         </div>
 
         <div class="blur-overlay">
-            <button class="blur-overlay-cta">See all 272 leads</button>
+            <button class="blur-overlay-cta">See all {lc} leads</button>
             <p>Free sample week. No call required.</p>
         </div>
     </section>
@@ -512,7 +487,7 @@
                 <span class="toolbar-dot"></span>
                 <span class="toolbar-dot"></span>
                 <span class="toolbar-dot"></span>
-                <span class="toolbar-subject">The Monday Brief &mdash; Feb 10-17, 2026 | 272 VP+ Leads</span>
+                <span class="toolbar-subject">The Monday Brief &mdash; {week} | {lc} VP+ Leads</span>
             </div>
             <div class="email-preview-content">
                 <div class="ep-header">
@@ -521,9 +496,9 @@
                 </div>
                 <div class="ep-body">
                     <div class="ep-stat-row">
-                        <div class="ep-stat"><div class="num">272</div><div class="lbl">Leads</div></div>
-                        <div class="ep-stat"><div class="num">$234K</div><div class="lbl">Avg Salary</div></div>
-                        <div class="ep-stat"><div class="num green">86%</div><div class="lbl">Growth Hires</div></div>
+                        <div class="ep-stat"><div class="num">{lc}</div><div class="lbl">Leads</div></div>
+                        <div class="ep-stat"><div class="num">{avg}</div><div class="lbl">Avg Salary</div></div>
+                        <div class="ep-stat"><div class="num green">{growth}</div><div class="lbl">Growth Hires</div></div>
                         <div class="ep-stat"><div class="num">33</div><div class="lbl">Avg Score</div></div>
                     </div>
                     <div class="ep-leads-header">Top Leads This Week</div>
@@ -542,7 +517,7 @@
                         <div class="ep-lead-title">VP, Chief Privacy Officer</div>
                         <div class="ep-lead-meta">Adobe &middot; San Francisco &middot; $222K-$507K</div>
                     </div>
-                    <div class="ep-more">+ 269 more leads &middot; Salary benchmarks &middot; Geo heatmap &middot; Excel + PDF attached</div>
+                    <div class="ep-more">+ {lc - 3} more leads &middot; Salary benchmarks &middot; Geo heatmap &middot; Excel + PDF attached</div>
                 </div>
             </div>
         </div>
@@ -554,7 +529,7 @@
         <div class="section-header">
             <div class="section-divider"></div>
             <h2>This Week's Breakdown</h2>
-            <p>What 272 scored VP+ leads look like by signal, seniority, and function.</p>
+            <p>What {lc} scored VP+ leads look like by signal, seniority, and function.</p>
         </div>
 
         <div class="signal-bars" id="signal-bars">
@@ -659,7 +634,7 @@
                 <div class="pricing-feature"><span class="pricing-check">&#10003;</span><span>Top hiring companies, company stage mix, and stack trends</span></div>
                 <div class="pricing-feature"><span class="pricing-check">&#10003;</span><span>4-week salary trend lines by function</span></div>
             </div>
-            <button class="cta-btn" style="width: 100%; padding: 16px;" onclick="document.getElementById('cta-section').scrollIntoView({behavior:'smooth'})">Send Me a Free Brief</button>
+            <button class="cta-btn" style="width: 100%; padding: 16px;" onclick="document.getElementById('cta-section').scrollIntoView({{behavior:'smooth'}})">Send Me a Free Brief</button>
             <div class="pricing-cta-note">Free sample week. No credit card. No call.</div>
         </div>
     </section>
@@ -703,7 +678,7 @@
     <section class="cta-section" id="cta-section">
         <div class="cta-box">
             <h2>Get This Week's Monday Brief</h2>
-            <p>See what 272 scored VP+ leads look like in your inbox. Your first week is free.</p>
+            <p>See what {lc} scored VP+ leads look like in your inbox. Your first week is free.</p>
 
             <div class="cta-form" id="cta-form">
                 <input type="email" class="cta-input" id="cta-email" placeholder="you@recruitingfirm.com">
@@ -713,23 +688,169 @@
 
             <div class="cta-success" id="cta-success">
                 <h3>Check your inbox Monday morning.</h3>
-                <p>272 scored VP+ leads, salary benchmarks, and a filterable Excel workbook. Your first week is on us.</p>
+                <p>{lc} scored VP+ leads, salary benchmarks, and a filterable Excel workbook. Your first week is on us.</p>
             </div>
         </div>
     </section>
-</main>
+</main>"""
 
-<footer class="site-footer">
-    <div class="footer-content">
-        <span>&copy; 2026 ExecSignals. A product of Pariter Media Inc.</span>
-        <div class="footer-links">
-            <a href="mailto:hello@execsignals.com">Contact</a>
-            <a href="/privacy/">Privacy</a>
-            <a href="/terms/">Terms</a>
-        </div>
-    </div>
-</footer>
+    schemas = get_homepage_schemas(stats)
+    title = f"{SITE_NAME} — VP+ Hiring Intelligence for Executive Search"
+    desc = f"Scored VP+ growth hires delivered every Monday. Signal-rich executive leads with real salary budgets, market intelligence, and hiring velocity data for recruiting firms."
 
-<script src="/js/main.js?v=1"></script>
-</body>
-</html>
+    return get_page_wrapper(title, desc, "/", body, schemas=schemas)
+
+
+def build_privacy_page():
+    """Generate the privacy policy page."""
+    body = """
+<div class="legal-content">
+    <h1>Privacy Policy</h1>
+    <p class="legal-updated">Last updated: February 2026</p>
+
+    <h2>Information We Collect</h2>
+    <p>When you subscribe to The Monday Brief, we collect your email address. That's it. We don't track you across the web, sell your data, or share it with third parties.</p>
+
+    <h2>How We Use Your Information</h2>
+    <p>Your email address is used solely to deliver The Monday Brief and occasional product updates. We use Resend to send emails.</p>
+
+    <h2>Data Storage</h2>
+    <p>Your email address is stored in our Resend audience list. We do not maintain a separate database of subscriber information.</p>
+
+    <h2>Analytics</h2>
+    <p>We use Google Analytics 4 to understand how visitors interact with our website. This includes page views, scroll depth, and button clicks. GA4 does not collect personally identifiable information.</p>
+
+    <h2>Cookies</h2>
+    <p>We use minimal cookies required for analytics. No advertising cookies, no third-party trackers.</p>
+
+    <h2>Your Rights</h2>
+    <p>You can unsubscribe from The Monday Brief at any time using the link in any email. To request deletion of your data, email us at <a href="mailto:hello@execsignals.com">hello@execsignals.com</a>.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy? Email <a href="mailto:hello@execsignals.com">hello@execsignals.com</a>.</p>
+    <p>ExecSignals is operated by Pariter Media Inc.</p>
+</div>"""
+
+    return get_page_wrapper(
+        "Privacy Policy — ExecSignals",
+        "ExecSignals privacy policy. We collect your email to deliver The Monday Brief. That's it.",
+        "/privacy/",
+        body,
+    )
+
+
+def build_terms_page():
+    """Generate the terms of service page."""
+    body = """
+<div class="legal-content">
+    <h1>Terms of Service</h1>
+    <p class="legal-updated">Last updated: February 2026</p>
+
+    <h2>Service</h2>
+    <p>ExecSignals ("The Monday Brief") is a weekly email service providing scored VP+ hiring leads and market intelligence for executive search professionals. The service is provided by Pariter Media Inc.</p>
+
+    <h2>Subscription</h2>
+    <p>The Monday Brief costs $297 per month. Your first week is free. After that, you'll be billed monthly. You can cancel anytime with no cancellation fee.</p>
+
+    <h2>Data Accuracy</h2>
+    <p>We make every effort to provide accurate, timely hiring data. However, job postings change frequently. We do not guarantee the accuracy, completeness, or availability of any specific role. The data is provided for informational purposes to support your recruiting activities.</p>
+
+    <h2>Permitted Use</h2>
+    <p>Your subscription is for your individual professional use. You may forward the PDF market intel one-pager to clients. You may not redistribute the full Monday Brief, Excel workbook, or bulk data to competing services.</p>
+
+    <h2>Cancellation</h2>
+    <p>Cancel anytime from your account or by emailing <a href="mailto:hello@execsignals.com">hello@execsignals.com</a>. Cancellations take effect at the end of your current billing period.</p>
+
+    <h2>Limitation of Liability</h2>
+    <p>ExecSignals provides hiring intelligence data. We are not responsible for hiring decisions, placement outcomes, or business results based on our data. Our total liability is limited to the fees you've paid in the current billing period.</p>
+
+    <h2>Changes</h2>
+    <p>We may update these terms. Continued use of the service after changes constitutes acceptance. Material changes will be communicated via email.</p>
+
+    <h2>Contact</h2>
+    <p>Questions? Email <a href="mailto:hello@execsignals.com">hello@execsignals.com</a>.</p>
+</div>"""
+
+    return get_page_wrapper(
+        "Terms of Service — ExecSignals",
+        "ExecSignals terms of service. $297/mo, cancel anytime, no contract.",
+        "/terms/",
+        body,
+    )
+
+
+def build_404_page():
+    """Generate the 404 error page."""
+    body = """
+<div class="error-page">
+    <h1>404</h1>
+    <p>This page doesn't exist. The Monday Brief, however, does.</p>
+    <a href="/">Back to ExecSignals</a>
+</div>"""
+
+    return get_page_wrapper(
+        "Page Not Found — ExecSignals",
+        "Page not found.",
+        "/404",
+        body,
+        noindex=True,
+    )
+
+
+def build_sitemap():
+    """Generate sitemap.xml."""
+    today = datetime.now().strftime("%Y-%m-%d")
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://{DOMAIN}/</loc>
+        <lastmod>{today}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://{DOMAIN}/privacy/</loc>
+        <lastmod>{today}</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://{DOMAIN}/terms/</loc>
+        <lastmod>{today}</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+</urlset>"""
+
+
+def write_file(path, content):
+    """Write content to file, creating directories as needed."""
+    os.makedirs(os.path.dirname(path) if os.path.dirname(path) else ".", exist_ok=True)
+    with open(path, "w") as f:
+        f.write(content)
+    print(f"  Built: {path}")
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Build ExecSignals site")
+    parser.add_argument("--data", help="Path to latest_stats.json")
+    args = parser.parse_args()
+
+    # Resolve paths relative to project root (one level up from scripts/)
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    os.chdir(project_root)
+
+    stats = load_stats(args.data or "data/latest_stats.json")
+    print(f"Building ExecSignals site (lead_count={stats['lead_count']})...")
+
+    write_file("index.html", build_homepage(stats))
+    write_file("privacy/index.html", build_privacy_page())
+    write_file("terms/index.html", build_terms_page())
+    write_file("404.html", build_404_page())
+    write_file("sitemap.xml", build_sitemap())
+
+    print("Done! 5 files generated.")
+
+
+if __name__ == "__main__":
+    main()

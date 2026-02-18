@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Icon centered -->
+  <rect x="50" y="16" width="100" height="100" rx="22" fill="#D4A054"/>
+  <polyline points="64,66 84.4,66 93.7,40.6 103,91 112,66 132,66" fill="none" stroke="#0C0F1A" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Wordmark centered below -->
+  <text x="100" y="156" text-anchor="middle" font-family="'Plus Jakarta Sans', 'Helvetica Neue', sans-serif" font-weight="700" font-size="28" fill="#0C0F1A">Exec<tspan fill="#B8863E">Signals</tspan></text>
+  <!-- Tagline -->
+  <text x="100" y="180" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#64748B" letter-spacing="2">VP+ HIRING INTELLIGENCE</text>
+</svg>

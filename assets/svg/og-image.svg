@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0C0F1A"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D4A054"/>
+      <stop offset="100%" stop-color="#B8863E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.04">
+    <line x1="0" y1="0" x2="0" y2="630" stroke="#D4A054" stroke-width="1" transform="translate(100,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="#D4A054" stroke-width="1" transform="translate(200,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="#D4A054" stroke-width="1" transform="translate(300,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="#D4A054" stroke-width="1" transform="translate(400,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="#D4A054" stroke-width="1" transform="translate(500,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="#D4A054" stroke-width="1" transform="translate(600,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="#D4A054" stroke-width="1" transform="translate(700,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="#D4A054" stroke-width="1" transform="translate(800,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="#D4A054" stroke-width="1" transform="translate(900,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="#D4A054" stroke-width="1" transform="translate(1000,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="#D4A054" stroke-width="1" transform="translate(1100,0)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="#D4A054" stroke-width="1" transform="translate(0,100)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="#D4A054" stroke-width="1" transform="translate(0,200)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="#D4A054" stroke-width="1" transform="translate(0,300)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="#D4A054" stroke-width="1" transform="translate(0,400)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="#D4A054" stroke-width="1" transform="translate(0,500)"/>
+  </g>
+
+  <!-- Large decorative pulse in background -->
+  <polyline points="0,400 200,400 400,400 520,180 640,520 760,400 960,400 1200,400" fill="none" stroke="#D4A054" stroke-width="2" opacity="0.06" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Left content area -->
+  <!-- Icon -->
+  <rect x="80" y="80" width="72" height="72" rx="16" fill="#D4A054"/>
+  <polyline points="90.1,118.5 106.2,118.5 113.6,95 121,142 128.4,118.5 144.5,118.5" fill="none" stroke="#0C0F1A" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Brand name -->
+  <text x="168" y="130" font-family="'Plus Jakarta Sans', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="32" fill="#F8FAFC">Exec</text>
+  <text x="258" y="130" font-family="'Plus Jakarta Sans', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="32" fill="#D4A054">Signals</text>
+
+  <!-- Tagline -->
+  <text x="80" y="200" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#94A3B8" letter-spacing="2.5">VP+ HIRING INTELLIGENCE FOR EXECUTIVE SEARCH</text>
+
+  <!-- Divider -->
+  <line x1="80" y1="230" x2="580" y2="230" stroke="#1E293B" stroke-width="1"/>
+
+  <!-- Headline stat -->
+  <text x="80" y="310" font-family="'DM Serif Display', Georgia, serif" font-size="64" fill="#F8FAFC">272</text>
+  <text x="80" y="350" font-family="'Plus Jakarta Sans', 'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="18" fill="#94A3B8">VP+ Leads Scored This Week</text>
+
+  <!-- Stat cards row -->
+  <!-- Card 1 -->
+  <rect x="80" y="390" width="200" height="90" rx="12" fill="#111827" stroke="#1E293B" stroke-width="1"/>
+  <text x="100" y="425" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#94A3B8" letter-spacing="1">AVG SALARY</text>
+  <text x="100" y="462" font-family="'DM Serif Display', Georgia, serif" font-size="32" fill="#D4A054">$234K</text>
+
+  <!-- Card 2 -->
+  <rect x="300" y="390" width="200" height="90" rx="12" fill="#111827" stroke="#1E293B" stroke-width="1"/>
+  <text x="320" y="425" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#94A3B8" letter-spacing="1">SIGNAL SCORE</text>
+  <text x="320" y="462" font-family="'DM Serif Display', Georgia, serif" font-size="32" fill="#06D6A0">87/100</text>
+
+  <!-- Card 3 -->
+  <rect x="520" y="390" width="200" height="90" rx="12" fill="#111827" stroke="#1E293B" stroke-width="1"/>
+  <text x="540" y="425" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#94A3B8" letter-spacing="1">COMPANIES</text>
+  <text x="540" y="462" font-family="'DM Serif Display', Georgia, serif" font-size="32" fill="#60A5FA">148</text>
+
+  <!-- Right side: data visualization mockup -->
+  <!-- Mini signal bars -->
+  <g transform="translate(800, 100)">
+    <rect x="0" y="120" width="30" height="40" rx="4" fill="#B8863E" opacity="0.3"/>
+    <rect x="45" y="90" width="30" height="70" rx="4" fill="#B8863E" opacity="0.45"/>
+    <rect x="90" y="60" width="30" height="100" rx="4" fill="#B8863E" opacity="0.6"/>
+    <rect x="135" y="30" width="30" height="130" rx="4" fill="#D4A054" opacity="0.8"/>
+    <rect x="180" y="0" width="30" height="160" rx="4" fill="#D4A054"/>
+    <circle cx="195" cy="-10" r="5" fill="#D4A054" opacity="0.6"/>
+    <rect x="225" y="50" width="30" height="110" rx="4" fill="#B8863E" opacity="0.5"/>
+    <rect x="270" y="80" width="30" height="80" rx="4" fill="#B8863E" opacity="0.35"/>
+  </g>
+
+  <!-- Mini data rows on right -->
+  <g transform="translate(800, 310)">
+    <rect x="0" y="0" width="320" height="44" rx="8" fill="#111827" stroke="#1E293B" stroke-width="1"/>
+    <circle cx="22" cy="22" r="6" fill="#06D6A0"/>
+    <text x="40" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#E2E8F0">VP Sales · Series C · $285K</text>
+    <text x="290" y="27" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#D4A054">92</text>
+
+    <rect x="0" y="52" width="320" height="44" rx="8" fill="#111827" stroke="#1E293B" stroke-width="1"/>
+    <circle cx="22" cy="74" r="6" fill="#06D6A0"/>
+    <text x="40" y="79" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#E2E8F0">CRO · Enterprise SaaS · $340K</text>
+    <text x="290" y="79" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#D4A054">88</text>
+
+    <rect x="0" y="104" width="320" height="44" rx="8" fill="#111827" stroke="#1E293B" stroke-width="1"/>
+    <circle cx="22" cy="126" r="6" fill="#60A5FA"/>
+    <text x="40" y="131" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#E2E8F0">SVP Revenue · PE-backed · $310K</text>
+    <text x="290" y="131" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#D4A054">85</text>
+
+    <rect x="0" y="156" width="320" height="44" rx="8" fill="#111827" stroke="#1E293B" stroke-width="1"/>
+    <circle cx="22" cy="178" r="6" fill="#60A5FA"/>
+    <text x="40" y="183" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#E2E8F0">VP CS · Growth Stage · $248K</text>
+    <text x="290" y="183" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#D4A054">81</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="570" width="1200" height="60" fill="#0A0D16"/>
+  <text x="80" y="607" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="14" fill="#94A3B8">The Monday Brief</text>
+  <text x="260" y="607" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" fill="#64748B">·</text>
+  <text x="280" y="607" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" fill="#64748B">Scored VP+ leads delivered every Monday</text>
+  <text x="1120" y="607" text-anchor="end" font-family="'IBM Plex Mono', monospace" font-size="13" fill="#D4A054">$297/mo</text>
+</svg>
