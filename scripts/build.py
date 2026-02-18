@@ -674,6 +674,33 @@ def build_homepage(stats):
         </div>
     </section>
 
+    <!-- Browse Intelligence -->
+    <section class="browse-section">
+        <div class="section-header">
+            <div class="section-divider"></div>
+            <h2>Browse Intelligence</h2>
+            <p>Explore VP+ hiring data by role, market, or industry.</p>
+        </div>
+
+        <div class="browse-grid">
+            <a href="/roles/" class="browse-card">
+                <div class="browse-card-icon">&#9650;</div>
+                <span class="browse-card-title">By Role</span>
+                <span class="browse-card-desc">VP Sales, CFO, CRO, and 12 more</span>
+            </a>
+            <a href="/cities/" class="browse-card">
+                <div class="browse-card-icon">&#9737;</div>
+                <span class="browse-card-title">By Market</span>
+                <span class="browse-card-desc">New York, SF, Chicago, and 7 more</span>
+            </a>
+            <a href="/industries/" class="browse-card">
+                <div class="browse-card-icon">&uarr;</div>
+                <span class="browse-card-title">By Industry</span>
+                <span class="browse-card-desc">Healthcare, SaaS, Finance, and 7 more</span>
+            </a>
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="cta-section" id="cta-section">
         <div class="cta-box">

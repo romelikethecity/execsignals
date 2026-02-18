@@ -1,0 +1,98 @@
+name: Build and Deploy ExecSignals
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'css/**'
+      - 'js/**'
+      - 'data/**'
+      - 'assets/**'
+  workflow_dispatch:
+  schedule:
+    # Wed + Sat 2AM UTC (after Tue/Fri 8PM PST scraper runs)
+    - cron: '0 2 * * 3,6'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch latest stats from server
+        env:
+          SERVER_SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+        run: |
+          if [ -n "$SERVER_SSH_KEY" ]; then
+            mkdir -p ~/.ssh data
+            echo "$SERVER_SSH_KEY" > ~/.ssh/id_ed25519
+            chmod 600 ~/.ssh/id_ed25519
+            ssh-keyscan -H "$SERVER_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+            scp -o StrictHostKeyChecking=no "rome@${SERVER_HOST}:~/scrapers/master/data/latest_stats.json" data/latest_stats.json || echo "SCP failed, using defaults"
+            rm -f ~/.ssh/id_ed25519
+          else
+            echo "No SSH key configured, using default stats"
+          fi
+
+      - name: Build site
+        run: python scripts/build.py --data data/latest_stats.json
+
+      - name: Generate SEO pages
+        run: |
+          if [ -f scripts/generate_seo_pages.py ]; then
+            python scripts/generate_seo_pages.py
+          else
+            echo "SEO page generator not yet created, skipping"
+          fi
+
+      - name: Post-process pages
+        run: |
+          if [ -f scripts/post_process.py ]; then
+            python scripts/post_process.py
+          else
+            echo "Post-processor not yet created, skipping"
+          fi
+
+      - name: Commit updated files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/*.json index.html privacy/ terms/ 404.html sitemap.xml roles/ cities/ industries/ vs/ 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "Build site from pipeline data [skip ci]"
+          git push || true
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

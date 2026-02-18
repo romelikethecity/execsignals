@@ -1,0 +1,50 @@
+{
+  "roles": [
+    {"name": "VP Sales", "slug": "vp-sales", "salary_p25": "$180K", "salary_median": "$234K", "salary_p75": "$310K", "lead_count": 26, "top_signal": "Growth Hire", "top_industry": "Software / SaaS", "reports_to": "CRO or CEO"},
+    {"name": "CFO", "slug": "cfo", "salary_p25": "$195K", "salary_median": "$342K", "salary_p75": "$420K", "lead_count": 43, "top_signal": "Reports to CEO", "top_industry": "Financial Services", "reports_to": "CEO"},
+    {"name": "CRO", "slug": "cro", "salary_p25": "$250K", "salary_median": "$320K", "salary_p75": "$450K", "lead_count": 8, "top_signal": "Build Team", "top_industry": "Software / SaaS", "reports_to": "CEO"},
+    {"name": "VP Marketing", "slug": "vp-marketing", "salary_p25": "$175K", "salary_median": "$268K", "salary_p75": "$340K", "lead_count": 23, "top_signal": "Growth Hire", "top_industry": "Software / SaaS", "reports_to": "CMO or CEO"},
+    {"name": "VP Operations", "slug": "vp-operations", "salary_p25": "$160K", "salary_median": "$245K", "salary_p75": "$310K", "lead_count": 28, "top_signal": "Build Team", "top_industry": "Healthcare", "reports_to": "COO or CEO"},
+    {"name": "VP Engineering", "slug": "vp-engineering", "salary_p25": "$220K", "salary_median": "$310K", "salary_p75": "$400K", "lead_count": 18, "top_signal": "Build Team", "top_industry": "Software / SaaS", "reports_to": "CTO or CEO"},
+    {"name": "VP Product", "slug": "vp-product", "salary_p25": "$200K", "salary_median": "$285K", "salary_p75": "$370K", "lead_count": 15, "top_signal": "Growth Hire", "top_industry": "Software / SaaS", "reports_to": "CPO or CEO"},
+    {"name": "VP Finance", "slug": "vp-finance", "salary_p25": "$170K", "salary_median": "$248K", "salary_p75": "$320K", "lead_count": 19, "top_signal": "Reports to CFO", "top_industry": "Financial Services", "reports_to": "CFO"},
+    {"name": "VP HR", "slug": "vp-hr", "salary_p25": "$155K", "salary_median": "$225K", "salary_p75": "$290K", "lead_count": 14, "top_signal": "Build Team", "top_industry": "Healthcare", "reports_to": "CHRO or CEO"},
+    {"name": "COO", "slug": "coo", "salary_p25": "$210K", "salary_median": "$305K", "salary_p75": "$410K", "lead_count": 11, "top_signal": "Reports to CEO", "top_industry": "Healthcare", "reports_to": "CEO"},
+    {"name": "CMO", "slug": "cmo", "salary_p25": "$220K", "salary_median": "$298K", "salary_p75": "$390K", "lead_count": 9, "top_signal": "Growth Hire", "top_industry": "Software / SaaS", "reports_to": "CEO"},
+    {"name": "CTO", "slug": "cto", "salary_p25": "$240K", "salary_median": "$330K", "salary_p75": "$430K", "lead_count": 7, "top_signal": "Build Team", "top_industry": "Software / SaaS", "reports_to": "CEO"},
+    {"name": "CSO", "slug": "cso", "salary_p25": "$200K", "salary_median": "$280K", "salary_p75": "$370K", "lead_count": 5, "top_signal": "Growth Hire", "top_industry": "Consulting", "reports_to": "CEO"},
+    {"name": "SVP Sales", "slug": "svp-sales", "salary_p25": "$250K", "salary_median": "$325K", "salary_p75": "$400K", "lead_count": 10, "top_signal": "Growth Hire", "top_industry": "Software / SaaS", "reports_to": "CRO or CEO"},
+    {"name": "EVP", "slug": "evp", "salary_p25": "$280K", "salary_median": "$360K", "salary_p75": "$450K", "lead_count": 2, "top_signal": "Reports to CEO", "top_industry": "Financial Services", "reports_to": "CEO"}
+  ],
+  "cities": [
+    {"name": "New York", "slug": "new-york", "lead_count": 86, "avg_salary": "$287K", "remote_pct": "12%", "top_roles": ["CFO", "VP Sales", "VP Operations"], "top_companies": ["JPMorgan Chase", "Pfizer", "Bloomberg"]},
+    {"name": "San Francisco", "slug": "san-francisco", "lead_count": 54, "avg_salary": "$312K", "remote_pct": "18%", "top_roles": ["VP Engineering", "CRO", "VP Product"], "top_companies": ["Salesforce", "Adobe", "Block"]},
+    {"name": "Chicago", "slug": "chicago", "lead_count": 28, "avg_salary": "$254K", "remote_pct": "9%", "top_roles": ["CFO", "VP Operations", "VP Finance"], "top_companies": ["Abbott", "Baxter", "Morningstar"]},
+    {"name": "Boston", "slug": "boston", "lead_count": 22, "avg_salary": "$278K", "remote_pct": "14%", "top_roles": ["VP Engineering", "CFO", "VP Product"], "top_companies": ["Fidelity", "HubSpot", "Boston Children's Hospital"]},
+    {"name": "Los Angeles", "slug": "los-angeles", "lead_count": 19, "avg_salary": "$265K", "remote_pct": "11%", "top_roles": ["VP Marketing", "CFO", "VP Sales"], "top_companies": ["Disney", "Hulu", "Riot Games"]},
+    {"name": "Dallas", "slug": "dallas", "lead_count": 16, "avg_salary": "$238K", "remote_pct": "8%", "top_roles": ["CFO", "VP Operations", "VP Sales"], "top_companies": ["AT&T", "Texas Instruments", "Southwest Airlines"]},
+    {"name": "Atlanta", "slug": "atlanta", "lead_count": 14, "avg_salary": "$242K", "remote_pct": "10%", "top_roles": ["VP Sales", "VP Operations", "CFO"], "top_companies": ["Home Depot", "UPS", "NCR Voyix"]},
+    {"name": "Seattle", "slug": "seattle", "lead_count": 18, "avg_salary": "$305K", "remote_pct": "16%", "top_roles": ["VP Engineering", "VP Product", "CTO"], "top_companies": ["Amazon", "Microsoft", "Expedia"]},
+    {"name": "Denver", "slug": "denver", "lead_count": 12, "avg_salary": "$248K", "remote_pct": "15%", "top_roles": ["VP Sales", "VP Operations", "CFO"], "top_companies": ["Arrow Electronics", "DaVita", "Ibotta"]},
+    {"name": "Remote", "slug": "remote", "lead_count": 47, "avg_salary": "$272K", "remote_pct": "100%", "top_roles": ["VP Sales", "VP Marketing", "CRO"], "top_companies": ["Distributed companies", "Series B-D startups", "Public tech"]}
+  ],
+  "industries": [
+    {"name": "Healthcare", "slug": "healthcare", "velocity_wow": "+18%", "lead_count": 34, "avg_salary": "$245K", "top_roles": ["CFO", "VP Operations", "COO"], "hiring_trend": "Accelerating"},
+    {"name": "Financial Services", "slug": "financial-services", "velocity_wow": "+12%", "lead_count": 31, "avg_salary": "$298K", "top_roles": ["CFO", "VP Finance", "CRO"], "hiring_trend": "Accelerating"},
+    {"name": "Software / SaaS", "slug": "software-saas", "velocity_wow": "+7%", "lead_count": 52, "avg_salary": "$305K", "top_roles": ["VP Engineering", "VP Sales", "VP Product"], "hiring_trend": "Steady growth"},
+    {"name": "Manufacturing", "slug": "manufacturing", "velocity_wow": "+3%", "lead_count": 18, "avg_salary": "$228K", "top_roles": ["VP Operations", "CFO", "VP Sales"], "hiring_trend": "Stable"},
+    {"name": "Education", "slug": "education", "velocity_wow": "-4%", "lead_count": 12, "avg_salary": "$198K", "top_roles": ["CFO", "VP Operations", "VP HR"], "hiring_trend": "Cooling"},
+    {"name": "Consulting", "slug": "consulting", "velocity_wow": "-9%", "lead_count": 10, "avg_salary": "$275K", "top_roles": ["VP Sales", "CSO", "VP Operations"], "hiring_trend": "Contracting"},
+    {"name": "Nonprofit", "slug": "nonprofit", "velocity_wow": "+5%", "lead_count": 15, "avg_salary": "$195K", "top_roles": ["CFO", "COO", "VP Operations"], "hiring_trend": "Growing"},
+    {"name": "Retail", "slug": "retail", "velocity_wow": "+2%", "lead_count": 14, "avg_salary": "$232K", "top_roles": ["VP Sales", "VP Marketing", "VP Operations"], "hiring_trend": "Stable"},
+    {"name": "Real Estate", "slug": "real-estate", "velocity_wow": "+8%", "lead_count": 9, "avg_salary": "$258K", "top_roles": ["CFO", "VP Operations", "VP Sales"], "hiring_trend": "Recovering"},
+    {"name": "Energy", "slug": "energy", "velocity_wow": "+6%", "lead_count": 11, "avg_salary": "$262K", "top_roles": ["VP Operations", "CFO", "VP Engineering"], "hiring_trend": "Growing"}
+  ],
+  "comparisons": [
+    {"name": "LinkedIn Recruiter", "slug": "linkedin-recruiter", "price": "$10,800/yr", "strengths": ["Massive candidate database", "InMail messaging", "Boolean search", "Industry standard"], "weaknesses": ["No hiring signal extraction", "No salary budget data", "No scoring or ranking", "Alert fatigue from volume"]},
+    {"name": "Thrive TRM", "slug": "thrive-trm", "price": "$3,600+/yr", "strengths": ["CRM for executive search", "Pipeline management", "Client relationship tracking"], "weaknesses": ["No lead sourcing", "No market intelligence", "You still need to find opportunities"]},
+    {"name": "DIY Job Board Scanning", "slug": "diy-job-boards", "price": "Free (time cost)", "strengths": ["Free", "Direct source data", "Full control over search terms"], "weaknesses": ["10+ hours/week manual scanning", "No signal extraction", "No scoring", "Inconsistent coverage", "Easy to miss high-value roles"]},
+    {"name": "Salary Surveys", "slug": "salary-surveys", "price": "$2,000-10,000/yr", "strengths": ["Comprehensive historical data", "Trusted methodology", "Good for benchmarking presentations"], "weaknesses": ["Annual updates (stale)", "No individual role alerts", "No hiring signals", "Backward-looking, not real-time"]},
+    {"name": "Recruiter CRM Alerts", "slug": "recruiter-crm-alerts", "price": "Included in CRM", "strengths": ["Integrated with your workflow", "Custom saved searches"], "weaknesses": ["Limited to CRM's data sources", "No proprietary signal extraction", "No salary verification", "Generic alerts, no scoring"]}
+  ]
+}

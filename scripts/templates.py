@@ -134,6 +134,9 @@ def get_footer_html():
     return f"""
 <footer class="site-footer">
     <div class="footer-content">
+        <div class="footer-browse">
+            Browse: <a href="/roles/">Roles</a> &middot; <a href="/cities/">Cities</a> &middot; <a href="/industries/">Industries</a>
+        </div>
         <span>&copy; {YEAR} {SITE_NAME}. A product of {FOOTER_ENTITY}</span>
         <div class="footer-links">
 {links}        </div>
