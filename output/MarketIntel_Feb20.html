@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ExecSignals Market Intelligence Brief — Jan 06 – Feb 05, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --amber: #D4A054; --amber-light: #F5E6CC; --amber-bg: rgba(212, 160, 84, 0.08);
+    --navy: #0C0F1A; --navy-soft: #1A1E2E; --white: #FFFFFF;
+    --gray-50: #F9FAFB; --gray-100: #F3F4F6; --gray-200: #E5E7EB;
+    --gray-300: #D1D5DB; --gray-400: #9CA3AF; --gray-500: #6B7280;
+    --gray-600: #4B5563; --gray-700: #374151; --gray-800: #1F2937;
+    --green: #16A34A; --green-light: #DCFCE7; --red: #DC2626; --red-light: #FEE2E2;
+    --font-display: 'DM Serif Display', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+  html, body { font-family: var(--font-body); background: #E5E7EB; color: var(--gray-800); -webkit-font-smoothing: antialiased; }
+  .page { width: 8.5in; height: 11in; margin: 0.5in auto; background: var(--white); box-shadow: 0 4px 24px rgba(0,0,0,0.12); display: grid; grid-template-rows: auto auto 1fr auto auto; overflow: hidden; position: relative; }
+  .header { background: var(--navy); padding: 14px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .header-left { display: flex; align-items: baseline; gap: 16px; }
+  .logo { font-family: var(--font-display); font-size: 20px; color: var(--amber); letter-spacing: 0.02em; }
+  .header-title { font-family: var(--font-body); font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.85); letter-spacing: 0.06em; text-transform: uppercase; }
+  .header-date { font-family: var(--font-mono); font-size: 11px; color: var(--gray-400); white-space: nowrap; }
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+  .stat-box { background: var(--white); padding: 14px 20px; text-align: center; }
+  .stat-value { font-family: var(--font-mono); font-size: 26px; font-weight: 600; color: var(--navy); line-height: 1.1; }
+  .stat-label { font-family: var(--font-body); font-size: 10px; font-weight: 600; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+  .content { padding: 16px 28px 12px; display: grid; grid-template-rows: auto auto auto; gap: 14px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .section-title { font-family: var(--font-display); font-size: 13px; color: var(--navy); margin-bottom: 8px; padding-bottom: 5px; border-bottom: 2px solid var(--amber); display: flex; align-items: center; gap: 6px; }
+  .section-title::before { content: ''; display: inline-block; width: 3px; height: 13px; background: var(--amber); border-radius: 1px; }
+  table { width: 100%; border-collapse: collapse; font-size: 10px; }
+  table th { font-family: var(--font-mono); font-size: 8.5px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.1em; text-align: right; padding: 3px 6px 4px; border-bottom: 1px solid var(--gray-200); }
+  table th:first-child { text-align: left; }
+  table td { padding: 4px 6px; border-bottom: 1px solid var(--gray-100); font-family: var(--font-body); font-size: 10px; color: var(--gray-700); }
+  table td:not(:first-child) { text-align: right; font-family: var(--font-mono); font-size: 10px; }
+  table tr:last-child td { border-bottom: none; }
+  .role-cell { font-weight: 600; color: var(--navy); }
+  .trend-up { color: var(--green); font-size: 9px; }
+  .trend-down { color: var(--red); font-size: 9px; }
+  .trend-flat { color: var(--gray-400); font-size: 9px; }
+  .badge-new { font-family: var(--font-mono); font-size: 7.5px; font-weight: 600; color: var(--green); background: var(--green-light); padding: 1px 5px; border-radius: 3px; letter-spacing: 0.04em; text-transform: uppercase; margin-left: 4px; vertical-align: middle; }
+  .change-positive { color: var(--green); }
+  .change-negative { color: var(--red); }
+  .stage-section { padding: 0 28px 10px; }
+  .stage-title { font-family: var(--font-display); font-size: 13px; color: var(--navy); margin-bottom: 8px; padding-bottom: 5px; border-bottom: 2px solid var(--amber); display: flex; align-items: center; gap: 6px; }
+  .stage-title::before { content: ''; display: inline-block; width: 3px; height: 13px; background: var(--amber); border-radius: 1px; }
+  .stage-bar-container { margin-bottom: 6px; }
+  .stage-bar { display: flex; height: 26px; border-radius: 4px; overflow: hidden; gap: 1px; }
+  .stage-segment { display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 9px; font-weight: 600; color: var(--white); }
+  .stage-segment.enterprise { background: var(--navy); }
+  .stage-segment.late { background: #374151; }
+  .stage-segment.growth { background: var(--amber); color: var(--navy); }
+  .stage-segment.early { background: #D4A054aa; color: var(--navy); }
+  .stage-segment.unknown { background: var(--gray-300); color: var(--gray-600); }
+  .stage-legend { display: flex; gap: 16px; justify-content: center; }
+  .stage-legend-item { display: flex; align-items: center; gap: 5px; font-family: var(--font-body); font-size: 9px; color: var(--gray-500); }
+  .stage-legend-dot { width: 8px; height: 8px; border-radius: 2px; }
+  .stage-legend-dot.enterprise { background: var(--navy); }
+  .stage-legend-dot.late { background: #374151; }
+  .stage-legend-dot.growth { background: var(--amber); }
+  .stage-legend-dot.early { background: #D4A054aa; }
+  .stage-legend-dot.unknown { background: var(--gray-300); }
+  .footer { background: var(--gray-50); border-top: 1px solid var(--gray-200); padding: 10px 28px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-left { font-family: var(--font-body); font-size: 9px; color: var(--gray-500); }
+  .footer-left strong { color: var(--amber); font-family: var(--font-display); font-weight: normal; font-size: 10px; }
+  .footer-right { font-family: var(--font-mono); font-size: 8px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.06em; }
+  @media print {
+    html, body { background: white; margin: 0; padding: 0; }
+    .page { width: 100%; height: 100%; margin: 0; box-shadow: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    @page { size: letter; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div class="header-left">
+      <span class="logo">ExecSignals</span>
+      <span class="header-title">Market Intelligence Brief</span>
+    </div>
+    <span class="header-date">Jan 06 – Feb 05, 2026</span>
+  </div>
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="stat-value">50</div>
+      <div class="stat-label">VP+ Leads Scored</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">$325K</div>
+      <div class="stat-label">Avg Max Salary</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">10</div>
+      <div class="stat-label">Companies Hiring</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">92%</div>
+      <div class="stat-label">Growth Hires</div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="two-col">
+      <div>
+        <div class="section-title">Salary Benchmarks</div>
+        <table>
+          <thead><tr><th>Role</th><th>P25</th><th>Median</th><th>P75</th><th>4wk</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="role-cell">VP Sales</td>
+              <td>$182K</td>
+              <td>$222K</td>
+              <td>$283K</td>
+              <td class="trend-down">&#9660; -1.3%</td>
+            </tr>
+            <tr>
+              <td class="role-cell">CFO</td>
+              <td>$150K</td>
+              <td>$200K</td>
+              <td>$250K</td>
+              <td class="trend-up">&#9650; 2.6%</td>
+            </tr>
+            <tr>
+              <td class="role-cell">VP Engineering</td>
+              <td>$187K</td>
+              <td>$213K</td>
+              <td>$253K</td>
+              <td class="trend-flat">&#9644; 0%</td>
+            </tr>
+            <tr>
+              <td class="role-cell">VP Marketing</td>
+              <td>$185K</td>
+              <td>$210K</td>
+              <td>$262K</td>
+              <td class="trend-down">&#9660; -10.9%</td>
+            </tr>
+            <tr>
+              <td class="role-cell">VP Operations</td>
+              <td>$158K</td>
+              <td>$200K</td>
+              <td>$265K</td>
+              <td class="trend-down">&#9660; -15.8%</td>
+            </tr>
+            <tr>
+              <td class="role-cell">VP Product</td>
+              <td>$201K</td>
+              <td>$235K</td>
+              <td>$300K</td>
+              <td class="trend-down">&#9660; -14.0%</td>
+            </tr>
+            <tr>
+              <td class="role-cell">VP People/HR</td>
+              <td>$160K</td>
+              <td>$225K</td>
+              <td>$299K</td>
+              <td class="trend-down">&#9660; -14.3%</td>
+            </tr></tbody>
+        </table>
+      </div>
+      <div>
+        <div class="section-title">Hiring Velocity by Industry</div>
+        <table>
+          <thead><tr><th>Industry</th><th>Leads</th><th>WoW</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="role-cell">Financial Services</td>
+              <td>252</td>
+              <td class="change-positive">+42%</td>
+            </tr>
+            <tr>
+              <td class="role-cell">Healthcare</td>
+              <td>132</td>
+              <td class="change-negative">-29%</td>
+            </tr>
+            <tr>
+              <td class="role-cell">Education</td>
+              <td>56</td>
+              <td class="change-negative">-31%</td>
+            </tr>
+            <tr>
+              <td class="role-cell">Government</td>
+              <td>38</td>
+              <td class="change-negative">-33%</td>
+            </tr>
+            <tr>
+              <td class="role-cell">Nonprofit</td>
+              <td>34</td>
+              <td class="change-negative">-30%</td>
+            </tr>
+            <tr>
+              <td class="role-cell">Software / SaaS</td>
+              <td>23</td>
+              <td class="change-negative">-65%</td>
+            </tr></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="section-title">Top Hiring Companies</div>
+        <table>
+          <thead><tr><th>Company</th><th>Open VP+ Roles</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="role-cell">JPMorgan Chase</td>
+              <td>175</td>
+            </tr>
+            <tr>
+              <td class="role-cell">Citi</td>
+              <td>62</td>
+            </tr>
+            <tr>
+              <td class="role-cell">Information Technology Senior Management Forum</td>
+              <td>24</td>
+            </tr>
+            <tr>
+              <td class="role-cell">Synchrony</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td class="role-cell">Morgan Stanley</td>
+              <td>19</td>
+            </tr>
+            <tr>
+              <td class="role-cell">BNY Mellon<span class="badge-new">new</span></td>
+              <td>16</td>
+            </tr>
+            <tr>
+              <td class="role-cell">BlackRock</td>
+              <td>16</td>
+            </tr>
+            <tr>
+              <td class="role-cell">Fidelity Investments</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td class="role-cell">Barclays</td>
+              <td>14</td>
+            </tr>
+            <tr>
+              <td class="role-cell">State Street<span class="badge-new">new</span></td>
+              <td>13</td>
+            </tr></tbody>
+        </table>
+      </div>
+      <div>
+        <div class="section-title">VP+ Leads by Metro</div>
+        <table>
+          <thead><tr><th>Metro</th><th>Leads</th><th>WoW</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="role-cell">Remote</td>
+              <td>1264</td>
+              <td class="change-negative">-1%</td>
+            </tr>
+            <tr>
+              <td class="role-cell">New York</td>
+              <td>375</td>
+              <td class="change-negative">-50%</td>
+            </tr>
+            <tr>
+              <td class="role-cell">Los Angeles</td>
+              <td>334</td>
+              <td class="change-negative">-26%</td>
+            </tr>
+            <tr>
+              <td class="role-cell">Washington DC</td>
+              <td>63</td>
+              <td class="change-negative">-48%</td>
+            </tr>
+            <tr>
+              <td class="role-cell">Chicago</td>
+              <td>59</td>
+              <td class="change-negative">-33%</td>
+            </tr>
+            <tr>
+              <td class="role-cell">San Francisco</td>
+              <td>53</td>
+              <td class="change-negative">-36%</td>
+            </tr>
+            <tr>
+              <td class="role-cell">Boston</td>
+              <td>44</td>
+              <td class="change-positive">+14%</td>
+            </tr>
+            <tr>
+              <td class="role-cell">Miami</td>
+              <td>29</td>
+              <td class="change-negative">-56%</td>
+            </tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="stage-section">
+    <div class="stage-title">Company Stage Distribution</div>
+    <div class="stage-bar-container">
+      <div class="stage-bar">
+        <div class="stage-segment unknown" style="width: 100%;">100%</div>
+
+      </div>
+    </div>
+    <div class="stage-legend">
+      <div class="stage-legend-item"><div class="stage-legend-dot enterprise"></div>Enterprise</div>
+      <div class="stage-legend-item"><div class="stage-legend-dot late"></div>Late Stage</div>
+      <div class="stage-legend-item"><div class="stage-legend-dot growth"></div>Growth</div>
+      <div class="stage-legend-item"><div class="stage-legend-dot early"></div>Early Stage</div>
+      <div class="stage-legend-item"><div class="stage-legend-dot unknown"></div>Unknown</div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-left">
+      <strong>ExecSignals</strong> &mdash; The Monday Brief&ensp;|&ensp;execsignals.com&ensp;|&ensp;Pariter Media Inc.
+    </div>
+    <div class="footer-right">For client use. Updated weekly.</div>
+  </div>
+</div>
+</body>
+</html>

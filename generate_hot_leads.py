@@ -99,7 +99,7 @@ def fetch_hot_leads(db_path: str, days: int, min_seniority: str) -> list[dict]:
                j.is_remote, j.annual_salary_min, j.annual_salary_max,
                j.seniority_tier, j.function_category, j.source_url,
                j.date_posted, j.description_snippet, j.company_industry,
-               j.company_num_employees, j.company_stage
+               j.company_num_employees, j.company_stage, j.company_url
         FROM jobs j
         JOIN job_signals js ON j.id = js.job_id
         WHERE j.seniority_tier IN ({placeholders})
